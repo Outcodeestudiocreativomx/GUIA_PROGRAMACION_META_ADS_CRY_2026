@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constructora Río Yaqui — Guía Operativa de Configuración de Anuncios — Agosto 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #25D366;
+      --accent-dark: #128C7E;
+      --secondary: #3b82f6;
+      --purple: #8b5cf6;
+      --purple-bg: #f5f3ff;
+      --purple-border: #ddd6fe;
+      --blue-bg: #eff6ff;
+      --blue-border: #bfdbfe;
+      --warning: #f59e0b;
+      --warning-bg: #fffbeb;
+      --warning-border: #fde68a;
+      --danger: #ef4444;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --success: #10b981;
+      --success-bg: #ecfdf5;
+      --success-border: #a7f3d0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.55;
+      padding-bottom: 50px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 28px 0;
+      border-bottom: 4px solid var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand-title {
+      font-size: 1.75rem;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .header-subtitle {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #064e3b;
+    }
+
+    .btn-primary:hover {
+      background-color: #22c35e;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--primary);
+    }
+
+    .kpi-card:nth-child(1) { border-top-color: var(--secondary); }
+    .kpi-card:nth-child(2) { border-top-color: var(--purple); }
+    .kpi-card:nth-child(3) { border-top-color: var(--warning); }
+    .kpi-card:nth-child(4) { border-top-color: var(--accent-dark); }
+    .kpi-card:nth-child(5) { border-top-color: var(--accent); }
+
+    .kpi-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+
+    th, td {
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-auto {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .badge-manual {
+      background-color: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .badge-mixed {
+      background-color: #f3e8ff;
+      color: #6b21a8;
+    }
+
+    .badge-single {
+      background-color: #ecfdf5;
+      color: #047857;
+    }
+
+    .badge-discard {
+      background-color: #f1f5f9;
+      color: #64748b;
+      border: 1px solid #cbd5e1;
+    }
+
+    .badge-status-green {
+      background-color: var(--success-bg);
+      color: #047857;
+      border: 1px solid var(--success-border);
+    }
+
+    .badge-status-yellow {
+      background-color: var(--warning-bg);
+      color: #b45309;
+      border: 1px solid var(--warning-border);
+    }
+
+    .badge-status-red {
+      background-color: var(--danger-bg);
+      color: #b91c1c;
+      border: 1px solid var(--danger-border);
+    }
+
+    .asset-tag {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      display: inline-block;
+      margin-bottom: 3px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .diagnostic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .diag-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      background: #fafafa;
+    }
+
+    .diag-card.green { border-left: 4px solid var(--success); }
+    .diag-card.yellow { border-left: 4px solid var(--warning); }
+    .diag-card.red { border-left: 4px solid var(--danger); }
+    .diag-card.blue { border-left: 4px solid var(--secondary); background: var(--blue-bg); border-color: var(--blue-border); }
+    .diag-card.purple { border-left: 4px solid var(--purple); background: var(--purple-bg); border-color: var(--purple-border); }
+
+    .diag-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .diag-range {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .diag-desc {
+      font-size: 0.85rem;
+      color: #334155;
+    }
+
+    .precheck-box {
+      background-color: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      border-left: 4px solid var(--warning);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .precheck-item {
+      margin-bottom: 12px;
+    }
+
+    .precheck-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .precheck-title {
+      font-weight: 700;
+      color: #92400e;
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+    }
+
+    .precheck-text {
+      font-size: 0.85rem;
+      color: #78350f;
+    }
+
+    .relay-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    .relay-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .flow-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .flow-step {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      position: relative;
+      border-left: 4px solid var(--primary);
+    }
+
+    .flow-step:nth-child(1) { border-left-color: var(--secondary); }
+    .flow-step:nth-child(2) { border-left-color: var(--accent-dark); }
+    .flow-step:nth-child(3) { border-left-color: var(--warning); }
+    .flow-step:nth-child(4) { border-left-color: var(--success); }
+
+    .flow-step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .step-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      font-size: 0.875rem;
+      color: #334155;
+    }
+
+    .bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1;
+      top: 1px;
+    }
+
+    .alert-box {
+      background-color: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      border-left: 4px solid var(--warning);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #78350f;
+    }
+
+    .copy-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      gap: 12px;
+    }
+
+    .copy-text {
+      font-size: 0.85rem;
+      color: #334155;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .btn-copy {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .btn-copy:hover {
+      background-color: #1e293b;
+    }
+
+    .checklist-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .checklist-item:hover {
+      background-color: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding-bottom: 0;
+      }
+      header {
+        background: #0f172a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .btn, .btn-copy {
+        display: none !important;
+      }
+      .section-card {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        break-inside: avoid;
+        margin-bottom: 16px;
+        padding: 16px;
+      }
+      .flow-step {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. ENCABEZADO -->
+  <header>
+    <div class="container header-content">
+      <div>
+        <h1 class="brand-title">Constructora Río Yaqui</h1>
+        <p class="header-subtitle">Guía Operativa de Configuración de Anuncios — Agosto 2026</p>
+      </div>
+      <button class="btn btn-primary" onclick="window.print()">Imprimir / Guardar PDF</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 2. TARJETAS DE RESUMEN (5) -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Personas alcanzadas</span>
+        <div class="kpi-value">98,191</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Veces vistas</span>
+        <div class="kpi-value">409,929</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Frecuencia Promedio</span>
+        <div class="kpi-value">4.17</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Conversaciones</span>
+        <div class="kpi-value">417</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Presupuesto diario</span>
+        <div class="kpi-value">$615 <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">MXN</span></div>
+      </div>
+    </div>
+
+    <!-- PRESUPUESTO MENSUAL OBSERVADO -->
+    <div style="background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div>
+        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;">Presupuesto mensual objetivo — agosto (13 días activos)</span>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0f172a;">~$8,000 <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">MXN</span> <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">· $615/día</span></div>
+      </div>
+      <p style="font-size: 0.8rem; color: #64748b; max-width: 580px; line-height: 1.4; font-style: italic;">
+        Al concentrar el presupuesto en 13 días activos se eleva el presupuesto diario a $615 MXN, aumentando la visibilidad y competitividad en cada jornada. Si se decide aumentar más adelante, aplicarlo directamente al conjunto de anuncios con mayor urgencia comercial — no de manera general en porcentaje.
+      </p>
+    </div>
+
+    <!-- 3. SECCIÓN — VERIFICACIONES PREVIAS -->
+    <div class="section-card">
+      <h2 class="section-title">Verificar antes de iniciar la configuración.</h2>
+      <div class="precheck-box">
+        
+        <div class="precheck-item">
+          <div class="precheck-title">a) Límite de gasto de la campaña</div>
+          <div class="precheck-text">Revisar si las campañas activas tienen configurado un tope de dinero. Si ya se alcanzó, los anuncios no se mostrarán aunque estén bien configurados. Aumentar o eliminar ese límite.</div>
+        </div>
+
+        <div class="precheck-item">
+          <div class="precheck-title">b) Fecha de finalización de la campaña</div>
+          <div class="precheck-text">Validar que la fecha de término en cada campaña no haya pasado. Si ya venció, la campaña se detuvo sola. Actualizar la fecha o dejarla sin fecha de fin.</div>
+        </div>
+
+        <div class="precheck-item">
+          <div class="precheck-title">c) Estado de la campaña</div>
+          <div class="precheck-text">Confirmar que el estado de cada campaña en el listado indique 'Activa'. Si aparece 'Pausada' o 'Completada', reactivarla.</div>
+        </div>
+
+        <div class="precheck-item">
+          <div class="precheck-title">d) Campañas independientes de Prueba A y Prueba B</div>
+          <div class="precheck-text">Verificar que cada variante esté configurada en su campaña correspondiente según el listado real, manteniendo el presupuesto independiente para asegurar el correcto aprendizaje acumulado en cada una.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. SECCIÓN — QUÉ ES LA FRECUENCIA -->
+    <div class="section-card">
+      <h2 class="section-title">Qué es la Frecuencia</h2>
+      <p style="font-size: 0.875rem; color: #334155; margin-bottom: 14px;">
+        La frecuencia indica la cantidad de veces, en promedio, que una misma persona visualizó el anuncio publicitario. Se obtiene al dividir el total de veces que se mostró el anuncio entre el número de personas alcanzadas.
+      </p>
+
+      <div class="table-responsive" style="margin-bottom: 16px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Conjunto de Anuncios</th>
+              <th>Veces que se mostró</th>
+              <th>Personas que lo vieron</th>
+              <th>Frecuencia</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>El Dorado First Prueba A</strong></td>
+              <td>24,717 vistas</td>
+              <td>9,442 personas</td>
+              <td><strong>2.62</strong></td>
+              <td><span class="badge badge-status-green">Bien</span></td>
+            </tr>
+            <tr>
+              <td><strong>El Dorado First Prueba B</strong></td>
+              <td>27,637 vistas</td>
+              <td>10,530 personas</td>
+              <td><strong>2.62</strong></td>
+              <td><span class="badge badge-status-green">Bien</span></td>
+            </tr>
+            <tr>
+              <td><strong>Los Agaves First Prueba A</strong></td>
+              <td>41,662 vistas</td>
+              <td>16,700 personas</td>
+              <td><strong>2.49</strong></td>
+              <td><span class="badge badge-status-green">Bien</span></td>
+            </tr>
+            <tr>
+              <td><strong>Los Agaves First Prueba B</strong></td>
+              <td>43,214 vistas</td>
+              <td>18,131 personas</td>
+              <td><strong>2.38</strong></td>
+              <td><span class="badge badge-status-green">Bien</span></td>
+            </tr>
+            <tr style="background-color: #fff7ed;">
+              <td><strong>Huatabampo First</strong></td>
+              <td>102,050 vistas</td>
+              <td>24,087 personas</td>
+              <td><strong>4.24</strong></td>
+              <td><span class="badge badge-status-red">Se mostró demasiadas veces</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="diagnostic-grid">
+        <div class="diag-card green">
+          <div class="diag-header">
+            <span class="diag-range">1.0 a 2.8</span>
+            <span class="badge badge-status-green">Verde</span>
+          </div>
+          <p class="diag-desc">La audiencia recibe el anuncio la cantidad adecuada de veces.</p>
+        </div>
+        <div class="diag-card yellow">
+          <div class="diag-header">
+            <span class="diag-range">2.9 a 3.5</span>
+            <span class="badge badge-status-yellow">Amarillo</span>
+          </div>
+          <p class="diag-desc">Conviene preparar un anuncio nuevo, se acerca al límite recomendado.</p>
+        </div>
+        <div class="diag-card red">
+          <div class="diag-header">
+            <span class="diag-range">Más de 3.5</span>
+            <span class="badge badge-status-red">Rojo</span>
+          </div>
+          <p class="diag-desc">La audiencia ya vio el anuncio demasiadas veces y deja de responder. Es necesario cambiarlo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. SECCIÓN — CÓMO DISTRIBUYE META EL PRESUPUESTO -->
+    <div class="section-card">
+      <h2 class="section-title">Cómo Distribuye Meta el Presupuesto</h2>
+      <div class="diagnostic-grid" style="margin-top: 0;">
+        
+        <!-- Situación A -->
+        <div class="diag-card blue">
+          <div class="diag-header">
+            <span class="diag-range" style="color: #1e40af;">Situación A — Entre Campañas y Conjuntos</span>
+            <span class="badge" style="background: #dbeafe; color: #1e40af;">Nivel Campaña</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Cada plaza se mantiene en su campaña respectiva para conservar el aprendizaje previo acumulado.</li>
+            <li>El presupuesto diario se asigna de forma fija en cada campaña para garantizar presencia constante en cada desarrollo.</li>
+            <li>Trabajar con presupuestos fijos por campaña asegura un control total de la inversión diaria sin depender de optimizaciones automáticas externas.</li>
+          </ul>
+        </div>
+
+        <!-- Situación B -->
+        <div class="diag-card purple">
+          <div class="diag-header">
+            <span class="diag-range" style="color: #6b21a8;">Situación B — Entre Anuncios de un Mismo Conjunto</span>
+            <span class="badge" style="background: #ede9fe; color: #6b21a8;">Nivel Anuncios</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Cuando un conjunto tiene 2 o 3 anuncios, Meta concentra el presupuesto en el que mejor resultado está dando.</li>
+            <li>Un anuncio con pocas impresiones no indica un error: queda en reserva, disponible si el anuncio principal se satura.</li>
+            <li>No pausarlo antes de 10 días, salvo que el conjunto completo esté en zona roja de frecuencia.</li>
+            <li>Para comparar dos anuncios de forma pareja, colocarlos en conjuntos separados.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. SECCIÓN — CUÁNDO CAMBIAR UN ANUNCIO -->
+    <div class="section-card">
+      <h2 class="section-title">Cuándo Cambiar un Anuncio</h2>
+      <p style="font-size: 0.875rem; color: #334155; margin-bottom: 10px;">
+        Aplicar solo cuando TODO el <strong>conjunto de anuncios</strong> está en zona roja de frecuencia (más de 3.5), no cuando un solo anuncio dentro de un conjunto sano recibe poca entrega — eso es normal, ver Situación B.
+      </p>
+
+      <div class="relay-card">
+        <div class="relay-title">Protocolo Operativo de Rotación:</div>
+        <ul class="bullet-list">
+          <li><strong>1.</strong> Verificar que la frecuencia del conjunto de anuncios superó 3.5.</li>
+          <li><strong>2.</strong> Cargar el anuncio nuevo dentro del mismo conjunto existente.</li>
+          <li><strong>3.</strong> Mantener ambos anuncios activos durante 1 o 2 días.</li>
+          <li><strong>4.</strong> Pausar el anuncio anterior cuando el nuevo reciba entrega constante.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6B. SECCIÓN — ESTRATEGIA GENERAL AGOSTO 2026 -->
+    <div class="section-card" style="border-left: 4px solid #0f172a;">
+      <h2 class="section-title">Estrategia General — Agosto 2026</h2>
+      <p style="font-size: 0.875rem; color: #334155; margin-bottom: 6px;">
+        La estrategia se divide en <strong>tres fases secuenciales</strong>. Cada fase solo se activa cuando la anterior se completa. El principio rector es no interrumpir el aprendizaje acumulado de las campañas.
+      </p>
+      <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 16px; font-style: italic;">
+        Los creativos de agosto se introducen dentro de los conjuntos existentes. Los nuevos creativos de rotación (imágenes, posts) se reservan como herramienta de acción cuando la frecuencia lo justifique.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; color: #1e40af;">Fase 1 — Lanzar los videos nuevos</div>
+            <span style="font-size: 0.72rem; font-weight: 700; background: #dbeafe; color: #1e40af; padding: 3px 8px; border-radius: 4px;">AHORA</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Cargar los videos de agosto dentro de cada conjunto activo indicado en la tabla, sin crear conjuntos nuevos.</li>
+            <li>Mantener los anuncios anteriores activos junto a los nuevos durante los primeros 5 a 7 días para no interrumpir la entrega.</li>
+            <li>Meta determinará cuál anuncio concentra mejor el presupuesto de forma progresiva y automática.</li>
+          </ul>
+        </div>
+
+        <div style="background: #fff7ed; border: 1px solid #fed7aa; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; color: #b45309;">Fase 2 — Monitorear frecuencia (especialmente Huatabampo)</div>
+            <span style="font-size: 0.72rem; font-weight: 700; background: #fef3c7; color: #b45309; padding: 3px 8px; border-radius: 4px;">DÍAS 3–10</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Revisar la frecuencia de todos los conjuntos cada 3 días usando los rangos del semáforo de esta guía.</li>
+            <li><strong>Huatabampo First</strong> ya está en zona roja (4.24). Es el primer conjunto en requerir acción.</li>
+            <li>El resto de los conjuntos están en zona verde — no requieren cambios hasta que la frecuencia supere 3.5.</li>
+            <li>No pausar ningún anuncio en esta fase. Solo observar y documentar.</li>
+          </ul>
+        </div>
+
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-left: 4px solid #10b981; border-radius: 8px; padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; color: #047857;">Fase 3 — Rotar creativos cuando la frecuencia lo justifique</div>
+            <span style="font-size: 0.72rem; font-weight: 700; background: #d1fae5; color: #047857; padding: 3px 8px; border-radius: 4px;">CUANDO SEA NECESARIO</span>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Acción inmediata — Huatabampo First:</strong> este conjunto ya está en zona roja (4.24). En cuanto los videos nuevos tengan entrega estable (aprox. día 7), aplicar el protocolo de rotación cargando los creativos sugeridos dentro del mismo conjunto.</li>
+            <li><strong>El Dorado y Los Agaves:</strong> no se planifica rotación de momento. Sus creativos de relevo (post_1, Historia_1) están disponibles únicamente como recurso de respuesta si la frecuencia de alguno de esos conjuntos sube a zona amarilla o roja.</li>
+            <li>En cualquier caso: cargar el nuevo creativo dentro del mismo conjunto existente, sin crear uno nuevo. Mantener ambos activos 2 días y pausar el anterior cuando el nuevo tenga entrega constante.</li>
+            <li>Registrar la fecha de cada rotación para anticipar el siguiente ciclo.</li>
+          </ul>
+          <div class="alert-box" style="margin-top: 10px;">
+            Primera rotación anticipada: <strong>Huatabampo First</strong>. Los creativos de relevo para El Dorado y Los Agaves solo se activan si la frecuencia escala — no de manera preventiva.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6C. SECCIÓN — PROTOCOLO SI META NO ACTIVA LA ENTREGA DEL VIDEO -->
+    <div class="section-card">
+      <h2 class="section-title">Protocolo: Si Meta No Activa la Entrega del Video</h2>
+      <p style="font-size: 0.875rem; color: #334155; margin-bottom: 16px;">
+        Ocasionalmente Meta puede tardar en activar un video recién cargado, o no entregarlo del todo. A continuación se describen dos planes de acción en orden de menor a mayor intervención. Aplicar siempre el plan de menor impacto primero.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-left: 4px solid #10b981; border-radius: 8px; padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; color: #047857;">Plan A — Validar y monitorear entrega en las próximas 24h</div>
+            <span style="font-size: 0.72rem; font-weight: 700; background: #d1fae5; color: #047857; padding: 3px 8px; border-radius: 4px;">Impacto mínimo</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Verificar que el estado del anuncio sea 'Aprobado'. Si aparece 'En revisión', esperar a que concluya el proceso dentro de las primeras 24h.</li>
+            <li>Monitorear el panel de entrega periódicamente durante este primer día para confirmar el registro de impresiones iniciales.</li>
+            <li>Evitar realizar modificaciones en la configuración del anuncio o de la campaña durante estas 24h para no interrumpir el inicio del aprendizaje.</li>
+            <li>Si transcurrido este plazo de 24h el anuncio continúa aprobado pero registra cero impresiones, proceder con el Plan B.</li>
+          </ul>
+        </div>
+
+        <div style="background: #fef3c7; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; color: #b45309;">Plan B — Revisar el anuncio y solicitar revisión manual</div>
+            <span style="font-size: 0.72rem; font-weight: 700; background: #fef3c7; color: #b45309; padding: 3px 8px; border-radius: 4px;">Impacto bajo</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Si el anuncio aparece como 'Rechazado', verificar el motivo en la columna de diagnóstico del Administrador de Anuncios.</li>
+            <li>Corregir el elemento señalado (texto, miniatura o segmentación) y enviarlo nuevamente a revisión desde el mismo anuncio.</li>
+            <li>Si no hay motivo de rechazo visible pero sigue sin entrega, seleccionar la opción 'Solicitar revisión' dentro del anuncio.</li>
+            <li>El conjunto de anuncios continúa activo durante este proceso — los anuncios anteriores mantienen la entrega sin interrupción.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 7. TABLA DE PROGRAMACIÓN -->
+    <div class="section-card">
+      <h2 class="section-title">Tabla de Programación</h2>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px; line-height: 1.4;">
+        Esta tabla sirve como referencia operativa para identificar cuáles son los creativos y formatos sugeridos que se deben considerar y cargar en el Administrador de Anuncios para la ejecución del plan de agosto.
+      </p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Campaña (Confirmada)</th>
+              <th>Conjunto</th>
+              <th>Formato</th>
+              <th>Anuncios a cargar</th>
+              <th>Presupuesto diario</th>
+              <th>Ubicación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>El Dorado JUL26 First</strong></td>
+              <td><strong>El Dorado First Prueba A</strong></td>
+              <td><span class="badge badge-mixed">Mezcla de video e imagen</span></td>
+              <td>
+                <span class="asset-tag">Video_Irak</span><br>
+                <span class="asset-tag">post_1</span>
+              </td>
+              <td><strong>$128/día</strong></td>
+              <td><span class="badge badge-auto">Automática</span></td>
+            </tr>
+            <tr>
+              <td><strong>Prueba: El Dorado JUL26 First</strong></td>
+              <td><strong>El Dorado First Prueba B</strong></td>
+              <td><span class="badge badge-mixed">Mezcla de video e imagen</span></td>
+              <td>
+                <span class="asset-tag">Video_Madrid</span><br>
+                <span class="asset-tag">Historia_1</span>
+              </td>
+              <td><strong>$128/día</strong></td>
+              <td><span class="badge badge-manual">Manual (solo Reels e Historias)</span></td>
+            </tr>
+            <tr style="background-color: #fff7ed;">
+              <td><strong>Las Praderas JUL26 First</strong></td>
+              <td>
+                <strong>Huatabampo First (Las Praderas)</strong><br>
+                <span style="font-size: 0.75rem; color: #b45309; font-weight: 600;">⚠ Frecuencia alta — Prioridad de rotación</span>
+              </td>
+              <td><span class="badge badge-mixed">Mezcla de video e imagen</span></td>
+              <td>
+                <span class="asset-tag">Video_Casa Nueva</span><br>
+                <span class="asset-tag">Historia_1</span><br>
+                <span class="asset-tag">post_1</span>
+              </td>
+              <td><strong>$103/día</strong> <span style="font-size: 0.75rem; color: #64748b;">(−20% respecto al resto)</span></td>
+              <td><span class="badge badge-auto">Automática</span></td>
+            </tr>
+            <tr>
+              <td><strong>Los Agave JUL26 First</strong></td>
+              <td><strong>Los Agaves First Prueba A</strong></td>
+              <td><span class="badge badge-mixed">Mezcla de video e imagen</span></td>
+              <td>
+                <span class="asset-tag">Video_Los Agaves</span><br>
+                <span class="asset-tag">post_1</span>
+              </td>
+              <td><strong>$128/día</strong></td>
+              <td><span class="badge badge-auto">Automática</span></td>
+            </tr>
+            <tr>
+              <td><strong>Prueba: Los Agave JUL26 First</strong></td>
+              <td><strong>Los Agaves First Prueba B</strong></td>
+              <td><span class="badge badge-single">Solo video vertical</span></td>
+              <td><span class="asset-tag">historia_1</span></td>
+              <td><strong>$128/día</strong></td>
+              <td><span class="badge badge-manual">Manual (solo Reels e Historias)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Campaña General</strong></td>
+              <td><strong>[Retargeting / Recurso adicional]</strong></td>
+              <td><span class="badge badge-single">Solo imagen cuadrada</span></td>
+              <td>
+                <span class="asset-tag">cr1</span> | <span class="asset-tag">cr2</span><br>
+                <span class="asset-tag">cr3</span> | <span class="asset-tag">cr4</span>
+              </td>
+              <td><strong>$0</strong><br><span style="font-size: 0.75rem; color: #64748b;">(Mantener pausada. Solo activar con presupuesto adicional si se requiere retargeting)</span></td>
+              <td><span class="badge badge-manual">Manual (solo Feed)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start;">
+          <div style="background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; font-size: 0.82rem; color: #334155; line-height: 1.5;">
+            <strong>Distribución por desarrollo:</strong><br>
+            El Dorado: $128 + $128 = <strong>$256</strong> &nbsp;|&nbsp; Las Praderas: <strong>$103</strong> &nbsp;|&nbsp; Los Agaves: $128 + $128 = <strong>$256</strong><br>
+            <span style="color: #64748b;">Total diario: <strong>$615 MXN</strong> · 13 días activos = ~$8,000 MXN. Huatabampo mantiene un presupuesto diario 20% menor que el resto de los conjuntos para regular su frecuencia (proporción equivalente a $100 en los desarrollos estándar frente a $80 en Huatabampo).</span>
+          </div>
+      </div>
+    </div>
+
+    <!-- 8. GUÍA DE CONFIGURACIÓN EN 4 PASOS -->
+    <div class="section-card">
+      <h2 class="section-title">Guía de Configuración en 4 Pasos</h2>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px; line-height: 1.4;">
+        Para facilitar la navegación, ubicar en la pantalla del Administrador de Anuncios las tres pestañas principales distribuidas de izquierda a derecha: <strong>Campañas</strong>, <strong>Conjuntos de anuncios</strong> y <strong>Anuncios</strong>. Cada paso indica en qué pestaña específica trabajar.
+      </p>
+      <div class="flow-box">
+
+        <!-- Paso 1 -->
+        <div class="flow-step">
+          <div class="flow-step-header">
+            <span class="step-title">Paso 1 — Configurar el Presupuesto Diario</span>
+            <span class="step-tag" style="background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe;">Pestaña: Campañas</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Ingresar al Administrador de Anuncios y hacer clic en la primera pestaña de la izquierda: <strong>Campañas</strong>.</li>
+            <li>Seleccionar una por una las campañas activas indicadas en la tabla y presionar el botón de editar.</li>
+            <li>Asignar el presupuesto diario establecido en la tabla de programación ($128, $128, $103, $128, $128). Huatabampo mantiene un presupuesto diario 20% menor (proporción equivalente a $100 diarios frente a $80).</li>
+            <li>Asegurar que la modalidad elegida sea 'Presupuesto Diario' y no presupuesto total.</li>
+            <li>Si se decide aplicar presupuesto extra a futuro, hacerlo en el desarrollo con urgencia comercial, no en forma generalizada.</li>
+          </ul>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="flow-step">
+          <div class="flow-step-header">
+            <span class="step-title">Paso 2 — Cargar Anuncios Nuevos</span>
+            <span class="step-tag" style="background: #ede9fe; color: #6b21a8; border: 1px solid #ddd6fe;">Pestaña: Conjuntos e Anuncios</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Hacer clic en la segunda pestaña del medio: <strong>Conjuntos de anuncios</strong>.</li>
+            <li>Abrir el conjunto correspondiente a la plaza, sin crear conjuntos nuevos para no reiniciar el aprendizaje acumulado.</li>
+            <li>Pasar a la tercera pestaña de la derecha: <strong>Anuncios</strong>.</li>
+            <li>Cargar los nuevos anuncios con los creativos de agosto dentro del conjunto seleccionado.</li>
+            <li>Mantener activos los anuncios de julio junto a los nuevos. La desconexión del anuncio viejo se realiza solo al completarse el período de aprendizaje (ver Estrategia General).</li>
+            <li>Validar que el destino dirija exclusivamente a 'WhatsApp'.</li>
+          </ul>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="flow-step">
+          <div class="flow-step-header">
+            <span class="step-title">Paso 3 — Configurar la Ubicación de los Anuncios</span>
+            <span class="step-tag" style="background: #ede9fe; color: #6b21a8; border: 1px solid #ddd6fe;">Pestaña: Conjuntos de anuncios</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Regresar a la pestaña del medio: <strong>Conjuntos de anuncios</strong> y editar la configuración del conjunto.</li>
+            <li>En los conjuntos configurados con formato mixto (imagen y video): mantener la opción automática habilitada.</li>
+            <li>En los conjuntos configurados con formato único vertical: elegir la opción manual y marcar únicamente Reels e Historias.</li>
+          </ul>
+          <div class="alert-box">
+            Al guardar cambios en conjuntos de anuncios que ya tienen historial, es normal que la entrega demore un breve lapso en recuperar el ritmo anterior.
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="flow-step">
+          <div class="flow-step-header">
+            <span class="step-title">Paso 4 — Validar Enlaces y Mensajes de Bienvenida</span>
+            <span class="step-tag" style="background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0;">Pestaña: Anuncios</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Hacer clic en la tercera pestaña: <strong>Anuncios</strong> y seleccionar las nuevas piezas creadas.</li>
+            <li>Confirmar que el botón indique 'Enviar mensaje' y enlace a la cuenta de WhatsApp correcta.</li>
+            <li>Verificar que el mensaje predeterminado corresponda al tipo de producto promocionado (por ejemplo, referenciando el modelo de casa o la zona de terrenos correspondiente).</li>
+            <li>Configurar la plantilla de mensaje de bienvenida sugerida (personalizar el texto entre corchetes de acuerdo al modelo de casa o terreno promocionado):</li>
+          </ul>
+          <div class="copy-box">
+            <span class="copy-text" id="wa-msg">"Hola, vi su anuncio y me gustaría recibir información sobre [Modelo de Casa / Zona de Terreno] en preventa."</span>
+            <button class="btn-copy" onclick="navigator.clipboard.writeText(document.getElementById('wa-msg').innerText); this.innerText='¡Copiado!'; setTimeout(()=>this.innerText='Copiar', 2000)">Copiar</button>
+          </div>
+          <ul class="bullet-list" style="margin-top: 12px;">
+            <li>No realizar más modificaciones durante los primeros 7 días tras la publicación de los anuncios para no alterar la etapa de ajuste inicial.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 9. CHECKLIST FINAL (Exactamente 8 puntos) -->
+    <div class="section-card">
+      <h2 class="section-title">Checklist Final</h2>
+      <div class="checklist-wrap">
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>1. Límite de gasto de la campaña verificado.</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>2. Fecha de finalización de la campaña validada.</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>3. Confirmadas las campañas de Prueba A y B correspondientes en el listado.</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>4. Presupuesto de campaña activado en modalidad diaria (Diario, no Total).</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>5. Mínimo de cada conjunto asignado según la tabla.</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>6. Anuncios nuevos cargados en los conjuntos existentes.</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>7. Ubicación configurada según el formato de cada conjunto.</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox">
+          <span>8. Configuración mantenida sin cambios durante los primeros 7 días.</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
